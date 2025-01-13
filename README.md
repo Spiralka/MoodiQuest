@@ -19,7 +19,7 @@ MoodiQuest мотивирует пользователей делать небо
 ## Из чего состоит MoodiQuest?
 
 Состоит из клиента и сервера. Клиент - iOS приложение. Сервер - бэкенд на Spring с использованием микросервисной архитектуры: 
-1. Микросервис, отвечающий за работу с БД называется [moodiQuest.databaseService](https://github.com/Spiralka/moodiQuest.databaseService)
+1. Микросервис, отвечающий за работу с БД называется - [moodiQuest.databaseService](https://github.com/Spiralka/moodiQuest.databaseService)
 2. Микросервис, отвечающий за работу с запросами - [moodiQuest.questService](https://github.com/Spiralka/moodiQuest.questService)
 
 Многие опытные люди могут спросить "А зачем микросервисы, это же дикое переусложнение helloWorld приложения?". И они даже будут в чем-то правы. Но я пошел по пути усложнения, потому что мне было весело. 
