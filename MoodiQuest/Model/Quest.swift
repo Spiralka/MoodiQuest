@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Quest: Decodable, Identifiable {
+    let id: Int
+    let shortName: String
+    let description: String
+    let progressNumber: Int?
+}

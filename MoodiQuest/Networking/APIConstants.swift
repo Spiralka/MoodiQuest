@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct APIConstants {
+    static let baseURL = "https://moodiquest.online/api"
+    
+    struct Endpoints {
+        static let dailyQuests = "/quests/daily"
+    }
+}
