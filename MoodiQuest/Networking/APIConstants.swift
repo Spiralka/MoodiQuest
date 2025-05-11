@@ -12,5 +12,6 @@ struct APIConstants {
     
     struct Endpoints {
         static let dailyQuests = "/quests/daily"
+        static let randomQuests = "/quests/random"
     }
 }

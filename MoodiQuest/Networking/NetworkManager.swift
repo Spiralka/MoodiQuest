@@ -40,4 +40,10 @@ extension NetworkManager {
             completion(result)
         }
     }
+    
+    func getchRandomQuest(completion: @escaping (Result<Quest, Error>) -> Void) {
+        request(endpoint: APIConstants.Endpoints.randomQuests) { (result: Result<Quest, Error>) in
+            completion(result)
+        }
+    }
 }

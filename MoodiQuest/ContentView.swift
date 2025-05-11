@@ -8,37 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ContentViewModel()
-    
     var body: some View {
-        NavigationView {
-            VStack {
-                if viewModel.isLoading {
-                    ProgressView("Загрузка...")
-                } else if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                } else {
-                    List(viewModel.quests) { quest in
-                        VStack(alignment: .leading) {
-                            Text(quest.shortName)
-                                .font(.headline)
-                            Text(quest.description)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            if let progress = quest.progressNumber {
-                                Text("Прогресс: \(progress)")
-                                    .font(.footnote)
-                                    .foregroundColor(.blue)
-                            }
-                        }
-                    }
+        TabView {
+            QuestsView()
+                .tabItem {
+                    Label("Квесты", systemImage: "list.bullet")
                 }
-            }
-            .navigationTitle("Квесты на день")
-            .onAppear {
-                viewModel.loadDailyQuests()
-            }
+            
+            StatsView()
+                .tabItem {
+                    Label("Статистика", systemImage: "chart.bar.fill")
+                }
+            
+            MenuView()
+                .tabItem {
+                    Label("Ещё", systemImage: "square.grid.3x3")
+                }
         }
     }
 }
